@@ -179,7 +179,7 @@ $ echo "00 01 02 03 04 05 06 07" | vvp ./chall_tb
 ```
 
 By sending some example values to the FPGA, we can observe, that the FPGA waits
-for 8 bytes to be send to it and then responds with a set of different 8 bytes,
+for 8 bytes to be sent, and then responds with a set of different 8 bytes,
 most likely encrypted - as the prompt of the challenge already suggests.
 
 We can now try to slightly alter the payload in order to test the behaviour of
