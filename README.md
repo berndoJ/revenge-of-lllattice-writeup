@@ -261,7 +261,7 @@ This is done by sending a random 8-byte block to the FPGA via our testbench
 and checking afterwards which flops hold the value of a specific bit we put in.
 By doing this iteratively, we can reduce the number of possible candidates, as
 only the correct flop may hold the bit value we put in 100% of the time. Our
-implementation can be viewed [here]().
+implementation can be viewed [find_s0.py](./files/scripts/find_s0.py).
 
 Contrary to the theory, this method was not 100% accurate in practice. Of the
 64 input bit FFs we got from the statistical method, two were not correct. These
