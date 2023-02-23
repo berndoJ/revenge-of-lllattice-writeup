@@ -1,0 +1,8 @@
+read_verilog challenge_decompiled.v
+hierarchy -top top
+synth
+flatten
+opt
+clean
+opt_clean -purge
+write_verilog -noattr out_2.v
