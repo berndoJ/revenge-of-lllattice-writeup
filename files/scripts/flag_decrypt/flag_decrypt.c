@@ -3,7 +3,7 @@
     pbctf 2023
 
     Copyright (c) 2023 Team CyberSecurityAustria
-    Authors: Johannes Berndorfer (@berndoJ) & Jonas Konrad (@austriangam3r)
+    Authors: Johannes Berndorfer (@berndoJ) & Jonas Konrad (@jalaka)
 
     TEA decryption routine for decrypting the flag.enc file.
 */
