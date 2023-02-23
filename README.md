@@ -9,7 +9,7 @@ Team @CyberSecurityAustria
 ## Overview
 
 *Revenge of LLLattice* was a hardware challenge at the pbctf 2023. It is in type
-similar to the pbctf 2022 challenge *LLLattice*, as the name already suggests.
+similar to the pbctf 2021 challenge *LLLattice*, as the name already suggests.
 
 Effectively, this challenge is a combination of hardware reversing and basic
 crypto.
