@@ -214,7 +214,7 @@ As we can see, most of the simulation time is spent during the TX/RX phases of
 the UART communication. All the signals with the long names are internal
 FF (flip-flop) signals - we see that most activity is happening between the
 transmissions. This makes sense, as the FPGA can only start to encrypt after
-having recieved the last byte of the block.
+having received the last byte of the block.
 
 In addition, we can also see some signals that are related to the UART logic:
 
@@ -266,9 +266,9 @@ implementation can be viewed [find_s0.py](./files/scripts/find_s0.py).
 Contrary to the theory, this method was not 100% accurate in practice. Of the
 64 input bit FFs we got from the statistical method, two were not correct. These
 errors were spotted by cross-checking the results with another method we
-developed, which is based on reverse-engineering the UART recieve logic:
+developed, which is based on reverse-engineering the UART receive logic:
 
-In the timeline we observed that eight FFs are used to latch recieved bits
+In the timeline we observed that eight FFs are used to latch received bits
 from the UART line and store them temporarily:
 
 | Latch FF                               | Bit   |
@@ -282,7 +282,7 @@ from the UART line and store them temporarily:
 | `_R29C34_PLC2_inst.sliceC_inst.ff_1.Q` | bit 6 |
 | `_R23C35_PLC2_inst.sliceA_inst.ff_0.Q` | bit 7 |
 
-After recieving a full byte (except the last byte in the 8 byte block
+After receiving a full byte (except the last byte in the 8 byte block
 transmission), they are latched into other registers that, in total, hold 64-bits.
 
 By now simply observing which registers the bytes get latched into, we know
@@ -332,7 +332,7 @@ Now we can also use another very useful property of addition in binary. Because
 for each addition the carry-out of one bit has to be connected to the carry-in
 of the next significant bit, a kind of carry-chain is created. This chain not
 only hints to the order of the bits that are part of the addition, it also 
-provides a way of extracting the endianness of the bytes recieved by the UART.
+provides a way of extracting the endianness of the bytes received by the UART.
 
 By now simply expanding the carry-MUX, we can "ride the carry-chain" along
 and extract all FFs that correspond to stage-1. In addition to that we used this
