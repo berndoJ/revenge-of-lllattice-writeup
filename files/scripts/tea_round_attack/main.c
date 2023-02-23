@@ -3,7 +3,7 @@
     pbctf 2023
 
     Copyright (c) 2023 Team CyberSecurityAustria
-    Authors: Johannes Berndorfer (@berndoJ) & Jonas Konrad (@austriangam3r)
+    Authors: Johannes Berndorfer (@berndoJ) & Jonas Konrad (@jalaka)
 
     This is just boilerplate code for the TEA round attack which can be found
     within tea_round_attack.c.
