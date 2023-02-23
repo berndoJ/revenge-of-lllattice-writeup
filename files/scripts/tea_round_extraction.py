@@ -4,7 +4,7 @@
 # pbctf 2023
 
 # Copyright (c) 2023 Team CyberSecurityAustria
-# Authors: Johannes Berndorfer (@berndoJ) & Jonas Konrad (@austriangam3r)
+# Authors: Johannes Berndorfer (@berndoJ) & Jonas Konrad (@jalaka)
 
 # This file simulates the FPGA design with random values for v0 and v1 and
 # extracts the v0/v1 values after one encryption round. As a sanity check,
