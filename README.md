@@ -502,7 +502,7 @@ pbctf{amazing job! now go enjoy an after school tea time break!}
 
 ## Lessons Learned
 
-Overall, this was a pretty demaning challenge for us, was we approximately
+Overall, this was a pretty demanding challenge for us. We approximately
 spent a total of 30h and were only able to get the flag ~24h after the CTF
 officially ended. Within the given timeframe, 0 teams were able to solve the
 challenge.
