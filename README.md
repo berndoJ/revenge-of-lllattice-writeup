@@ -212,7 +212,7 @@ testbench within a toolchain like Vivado.
 
 As we can see, most of the simulation time is spent during the TX/RX phases of
 the UART communication. All the signals with the long names are internal
-FF (flip-flop) signals - we see that most acitivity is happening between the
+FF (flip-flop) signals - we see that most activity is happening between the
 transmissions. This makes sense, as the FPGA can only start to encrypt after
 having recieved the last byte of the block.
 
