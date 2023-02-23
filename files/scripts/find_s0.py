@@ -4,7 +4,7 @@
 # pbctf 2023
 
 # Copyright (c) 2023 Team CyberSecurityAustria
-# Authors: Jonas Konrad (@austriangam3r)
+# Authors: Jonas Konrad (@jalaka)
 
 # This script performs a statistical analysis (multithreaded) to dump the FFs
 # of stage 0 (plaintext).
