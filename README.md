@@ -30,7 +30,34 @@ Attachments: challenge.bit, flag.enc
 
 ## TL;DR
 
-TODO
+As no team solved this challenge during the CTF, we decided to create a detailed
+writeup. For those who just want to know the overall steps - here's a TL;DR:
+
+- Identify the FPGA bitstream part from `xxd` and google to find out it's a
+  lattice FPGA.
+- Use `ecpunpack` ([Project Trellis](https://github.com/YosysHQ/prjtrellis)) and
+  VoidMercy's [Lattice ECP5 Bitstream Decompiler](https://github.com/VoidMercy/Lattice-ECP5-Bitstream-Decompiler)
+  to "decompile" the bitstream into Verilog.
+- Use `yosys` to simplify and clean up the Verilog file, reduces line count from
+  over 650K to ~60K.
+- Get a RTL schematic using a toolchain like Vivado to find out what the inputs
+  and outputs of the FPGA are used for (UART TX/RX, reset, clock).
+- Code a testbench in Verilog to be able to communicate with the FPGA over
+  UART and send/recieve data -> it encrypts 8-byte blocks and sends them back
+  over UART. Through changing the input we give to the FPGA we can also find out
+  that the encryption method used is a ECB block cipher.
+- Use a timeline analysis tool (Vivado or iverilog with GTKWave) to find out that
+  the encryption happens over 32 clock cyles -> the block cipher most likely has
+  32 rounds. 64-bit, 32 rounds -> this could be TEA!
+- Use the RTL-schematic and statistical analysis (or other methods) to find out
+  which FFs correspond to which bit in which encryption round (only first two
+  rounds needed). By statical analysis on the schematic we can also further
+  confirm our guess that the algo used is TEA because we find a two 32-bit adders
+  between each encryption stage.
+- Extract the two 32-bit data words for two consecutive TEA rounds and use
+  bruteforce to find out the encryption keys -> `b'bocchi za rock!\x00'`
+- Decrypt the `flag.enc` file with this key and obtain the flag:
+  `pbctf{amazing job! now go enjoy an after school tea time break!}`
 
 
 ## Process
