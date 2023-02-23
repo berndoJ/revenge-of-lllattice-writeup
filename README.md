@@ -3,7 +3,7 @@ Revenge of LLLattice
 
 *A Tale of Block-Ciphers and Carry-Chains*
 
-by Johannes Berndorfer (@berndoJ) and Jonas Konrad (@austriangam3r)
+by Johannes Berndorfer (@berndoJ) and Jonas Konrad (@jalaka)
 Team @CyberSecurityAustria
 
 ## Overview
@@ -52,7 +52,7 @@ writeup. For those who just want to know the overall steps - here's a TL;DR:
 - Use the RTL-schematic and statistical analysis (or other methods) to find out
   which FFs correspond to which bit in which encryption round (only first two
   rounds needed). By statical analysis on the schematic we can also further
-  confirm our guess that the algo used is TEA because we find a two 32-bit adders
+  confirm our guess that the algo used is TEA because we find two 32-bit adders
   between each encryption stage.
 - Extract the two 32-bit data words for two consecutive TEA rounds and use
   bruteforce to find out the encryption keys -> `b'bocchi za rock!\x00'`
