@@ -43,7 +43,7 @@ writeup. For those who just want to know the overall steps - here's a TL;DR:
 - Get a RTL schematic using a toolchain like Vivado to find out what the inputs
   and outputs of the FPGA are used for (UART TX/RX, reset, clock).
 - Code a testbench in Verilog to be able to communicate with the FPGA over
-  UART and send/recieve data -> it encrypts 8-byte blocks and sends them back
+  UART and send/receive data -> it encrypts 8-byte blocks and sends them back
   over UART. Through changing the input we give to the FPGA we can also find out
   that the encryption method used is a ECB block cipher.
 - Use a timeline analysis tool (Vivado or iverilog with GTKWave) to find out that
@@ -127,7 +127,7 @@ write_verilog -noattr challenge_opt.v
 
 In order to dynamically assess what the challenge logic does, we need a way of
 simulating design. In addition, we also need to be able to interact with the
-design in order to send and recieve data from the UART interface hinted to by
+design in order to send and receive data from the UART interface hinted to by
 the prompt.
 
 In the top module definition of the optimized Verilog file, we see that there
@@ -166,7 +166,7 @@ map the signals as follows:
 | `MIB_R0C40_PIOT0_JTXDATA0A_SIOLOGIC` | UART TX (FPGA -> Testbench) |
 
 Based on our findings, we can now write a small testbench in Verilog that
-implements a UART transmitter and reciever in order to communicate with the
+implements a UART transmitter and receiver in order to communicate with the
 design. [testbench.v](./files/verilog/testbench.v) takes space-separated hex
 values piped into it via `stdin`, sends them to the FPGA, waits for a response
 and prints them to the terminal.
