@@ -482,7 +482,7 @@ get the 128-bit TEA encryption key (Python syntax):
 b'bocchi za rock!\x00'
 ```
 
-### Decrytion of the Flag
+### Decryption of the Flag
 
 Now that we have the TEA key, retrieving the flag is just a matter of decrypting
 the `flag.enc` file.
